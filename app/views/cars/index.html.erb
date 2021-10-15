@@ -1,0 +1,50 @@
+<main class="container">
+  <div class="row">
+    <aside class="container, col-md-3">
+      <div class="list-group">
+        <legend>Menu</legend>
+        <%= link_to "Home", root_path, :method => :get, class: "list-group-item"
+        %> <%= link_to "lista de carros", cars_path,:method => :get, class:
+        "list-group-item active" %>
+        <a href="#" class="list-group-item">Morbi leo risus</a>
+        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+        <a href="#" class="list-group-item">Vestibulum at eros</a>
+      </div>
+    </aside>
+
+    <section class="row">
+      <article class="col-md-7">
+        <legend>Lista De Carros</legend>
+        <table class="table">
+          <thead>
+            <tr>
+              <th id="line1">Id</th>
+              <th id="line1">Perfil</th>
+              <th id="line1">Modelo</th>
+              <th id="line1">Placa</th>
+              <th id="line1">Color</th>
+              <th colspan="2" id="line1">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%@cars.each do |car| %>
+            <tr>
+              <td id="line2"><%=car.id%></td>
+              <td id="line2"><%=car.avatar%></td>
+              <td id="line2"><%=car.modelo%></td>
+              <td id="line2"><%=car.placa%></td>
+              <td id="line2"><%=car.color%></td>
+            
+
+            <td id="line2"><%= link_to "ver", car %></td>
+            <td id="line2"><%= link_to "eliminar", car, :method => :delete, data: { confirm: "Quiere eliminar Este Objeto?" }%></td>
+          </tr>
+            <%end %>
+          </tbody>
+        </table>
+        <%= link_to "registrar nuevo carro", new_car_path, :method => :GET,
+        class: " btn btn-primary" %>
+      </article>
+    </section>
+  </div>
+</main>

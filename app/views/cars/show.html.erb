@@ -1,0 +1,32 @@
+<main class="container" id="show">
+  <div class="row">
+    <aside class="container, col-md-4">
+      <div class="list-group">
+        <legend>Menu</legend>
+        <%= link_to "Home", root_path, :method => :get, class: "list-group-item"
+        %> <%= link_to "lista de carros", cars_path,:method => :get, class:
+        "list-group-item" %>
+        <a href="#" class="list-group-item active">Info de carro</a>
+        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+        <a href="#" class="list-group-item">Vestibulum at eros</a>
+      </div>
+    </aside>  
+
+    <section class="container">
+      <form role="form" class="col-md-4">
+        <legend>Carro</legend>
+      
+        <div class="form-group">
+          <%= simple_form_for @car do |f| %>
+            <%=f.input :id, readonly: true  %>  
+            <%= f.input :modelo,readonly: true %>
+            <%= f.input :placa,readonly: true%>
+            <%= f.input :color,readonly: true%>
+          <% end %>
+          <%=link_to "Regresar", cars_path, :method => :get,class:"btn btn-primary" %>
+          <%= link_to "Editar", edit_car_path, :method => :get , class:"btn btn-primary"%>
+        </div>
+      </form>
+    </section>
+  </div>
+</main>

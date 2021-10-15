@@ -1,0 +1,18 @@
+<main class="container" id="content-new">
+  <div class="row-horizontal">
+    <aside class="col-md-4">
+      <legend>Menu</legend>
+      <div class="list-group">
+          <%= link_to "Home", root_path, :method => :get, class: "list-group-item" %>
+          <%= link_to "lista de carros", cars_path,:method => :get, class: "list-group-item" %>
+        <a href="#" class="list-group-item active">Nuevo Carro</a>
+        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+        <a href="#" class="list-group-item">Vestibulum at eros</a>
+      </div>
+    </aside>
+      
+    <section class="col-md-4">
+      <legend>Registrar Nuevo Carro</legend>
+      <%= render "form" %>
+    </section>
+</main>   

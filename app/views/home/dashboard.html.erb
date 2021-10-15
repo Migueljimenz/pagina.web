@@ -1,0 +1,20 @@
+<main class="container">
+  <div class="row">
+    <aside class="col-md-4">
+      <legend>Menu</legend>
+      <div class="list-group">
+        <%= link_to "Home", root_path, :method => :get, class: "list-group-item
+        active" %> <%= link_to "lista de carros", cars_path,:method => :get,
+        class: "list-group-item" %>
+        <a href="#" class="list-group-item">Morbi leo risus</a>
+        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+        <a href="#" class="list-group-item">Vestibulum at eros</a>
+      </div>
+    </aside>
+    <section  class="col-md-8">
+      <div class="well">
+        <%= video_tag "Welcome.mp4", :size => "714x270", :controls => true, :autoplay => true %> 
+      </div>  
+    </section>
+  </div>
+</main>

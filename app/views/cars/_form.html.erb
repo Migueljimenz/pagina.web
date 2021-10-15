@@ -1,0 +1,13 @@
+<%= simple_form_for @car do |f| %>
+<%=f.input :id, readonly: true  %> 
+<%= f.input :modelo%>
+<%= f.input :placa%>
+<%= f.input :color%>
+<%= f.input :avatar%>
+
+<div class="form-action">
+    <%= f.button :submit, class:"btn btn-primary"%>
+    
+    <%= link_to "regresar", cars_path, :method => :get,class: "btn btn-primary" %>
+</div>
+<% end %>
